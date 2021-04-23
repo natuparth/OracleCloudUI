@@ -1,0 +1,49 @@
+.headerContainer{
+    height: 3em;
+    width: 100vw;
+    position: fixed;
+    align-items: center;
+    background-color: #1d2732;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    flex: 1 100%;
+}
+
+.iconClass{
+    margin-left: 1em;
+    color: white;
+}
+
+.icon{
+    width: 3em;
+}
+
+.home{
+    width: 10em;
+    display: flex;
+    align-items: flex-end;
+}
+.searchBar{
+    width: 35em;
+    outline: none;
+    flex-grow: 1;
+}
+.searchinput{
+    width: 60%;
+    border-radius: 5px;
+    height: 2em;
+}
+.region{
+    justify-self: right;
+    
+}
+
+img{
+    width: 60%;
+}
+.logout{
+    margin: 0 1%;
+    justify-self: right;
+    
+}

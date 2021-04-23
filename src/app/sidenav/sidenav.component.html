@@ -1,0 +1,19 @@
+<div class="subGroup" *ngFor="let item of listItems;let indexMain=index;">
+    <div class="subGroupHeading">
+       <fa-icon [icon]="item.icon"></fa-icon>
+      <span style="padding-left: 5px;">   {{item.name}}</span>
+    
+    </div>
+     
+    <div class="subGroupDiv" *ngFor="let subitem of item.children;let indexSub=index;">
+    <div class="subGroupItems" (click)="toggleCollapse(indexMain,indexSub)"> {{subitem.name}}
+    <span *ngIf="subitem.expanded==true;else expanded" > <fa-icon  class="iconClass" [icon]="faAngleDown"></fa-icon></span>
+    <ng-template #expanded >  <fa-icon class="iconClass"  [icon]="faAngleRight"></fa-icon></ng-template>
+    </div>
+      <div  [ngStyle]="{'max-height': (subitem.expanded === true) ?  '300px':'0', 'overflow': 'hidden', 'transition': 'max-height 1s'}">
+      <div class="subGroupItems" *ngFor="let child of subitem.children">
+                       {{child}}
+          </div>
+        </div>   
+    </div>
+</div>

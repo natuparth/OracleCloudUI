@@ -1,0 +1,33 @@
+.navContainer{
+    display: flex;
+}
+.subGroup{
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+}
+.subGroupHeading{
+    font-size: small;
+    padding: 5%;
+}
+
+
+.subGroupDiv{
+    font-size: medium;
+    
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+}
+.subGroupItems{
+    padding: 5%;
+    transition: height 2.5s;
+}
+div.subGroupItems:hover{
+    border-left: 3px solid #3ac5a6;
+    background-color: #364050;
+}
+
+.iconClass{
+    float: right;
+}
