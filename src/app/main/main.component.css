@@ -38,6 +38,7 @@
 .card:hover .innerCard {
     transform: rotateY(180deg);
     box-shadow: -5px 5px 5px #aaa;
+    cursor:pointer;
   }
   .face {
     position: absolute;
@@ -75,6 +76,7 @@
 .header > h3 {
     margin-bottom: 0;
     width: fit-content;
+    cursor: pointer;
    
 }
 .selected{

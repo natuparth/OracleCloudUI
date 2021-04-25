@@ -20,6 +20,10 @@
     width: 3em;
 }
 
+.icon:hover{
+    cursor: pointer;
+}
+
 .home{
     width: 10em;
     display: flex;
