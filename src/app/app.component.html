@@ -2,7 +2,8 @@
 <div class="container">
 <app-header  (toggleSideNav)="toggleNav()"></app-header>
 
- <div class="sidebar" [ngStyle] = "{'width': (sideNav == true)? '300px': '0px'}">   
+ <!-- <div class="sidebar" [ngStyle] = "{'width': (sideNav == true)? '300px': '0px'}">     -->
+     <div class="sidebar" [ngStyle] = "{'margin-left': (sideNav == true)? '0': '-300px'}">    
  <app-sidenav></app-sidenav>
  </div>
 <div class="mainContent" [ngStyle] = "{'margin-left': (sideNav == true)? '300px': '0px'}">
