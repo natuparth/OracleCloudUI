@@ -1,9 +1,14 @@
 
-<app-header></app-header>
-<div>
- <div class="sidebar">   
+<div class="container">
+<app-header  (toggleSideNav)="toggleNav()"></app-header>
+
+ <div class="sidebar" [ngStyle] = "{'width': (sideNav == true)? '300px': '0px'}">   
  <app-sidenav></app-sidenav>
  </div>
+<div class="mainContent" [ngStyle] = "{'margin-left': (sideNav == true)? '300px': '0px'}">
+    <app-main></app-main>
+</div>
+
  <router-outlet></router-outlet>
  </div>   
 

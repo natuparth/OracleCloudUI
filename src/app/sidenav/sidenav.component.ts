@@ -21,19 +21,19 @@ export class SidenavComponent implements OnInit {
               },
               {
                 name: 'Block Storage',
-                children: []
+               
               },
               {
                 name: 'Object Storage',
-                children: []
+               
               },
               {
                 name: 'File Storage',
-                children: []
+                
               },
               {
                 name: 'networking',
-                children: []
+                
               }
 
          ]
@@ -43,22 +43,45 @@ export class SidenavComponent implements OnInit {
          icon: faDatabase,
          children: [
           {
-            name: 'Compute',
-            expanded: false,
-            children: ['Instances', 'Dedicated Virtual Machine Hosts', 'Instance Configuration', 'Instance Pools', 'Cluster Networks']
+            name: 'Overview',
+            
           },
           {
-            name: 'Block Storage',
-            children: []
+            name: 'Autonomous Data Warehouse',
+            
+          },
+          {
+            name: 'Autonomous JSON Database', 
+          },
+          {
+            name: "Autonomous Transaction Processing"
+          },
+          {
+            name: "Bare Metal, VM and Exadata"
+          },
+          {
+            name: "Exadata Cloud@Customer"
+          },
+          {
+            name: "External Database"
           }
-
-
          ]
+       },
+       {
+        name: 'Databases',
+        icon: faDatabase,
+        children: [
+         {
+           name: 'MySQL',
+           expanded: false,
+           children: ['Create a Database', 'Host a MySQL database']
+         },
+         {
+           name: 'NoSQL Database'
+
+         }
+        ]
        }
-
-
-
-
 
   ]
   constructor() { }
@@ -66,6 +89,7 @@ export class SidenavComponent implements OnInit {
   ngOnInit(): void {
   }
   toggleCollapse(indexMain: number, indexSub: number){
+    if(this.listItems[indexMain].children)
     this.listItems[indexMain].children[indexSub].expanded = this.listItems[indexMain].children[indexSub].expanded === false ?  true: false;
 
   }

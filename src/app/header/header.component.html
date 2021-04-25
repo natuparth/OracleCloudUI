@@ -1,5 +1,5 @@
 <div class="headerContainer"> 
-    <div class="icon"><fa-icon class="iconClass" [icon]="faBar"></fa-icon></div> 
+    <div class="icon" [ngStyle] = "{'border': (navBar) ? '2px dotted grey' : 'none'}" (click)="toggleSideNav()"><fa-icon class="iconClass" [icon]="faBar"></fa-icon></div> 
     <div class="home">
          <img src="../../assets/logo.png"> &nbsp;<span>Cloud</span>
      </div>    

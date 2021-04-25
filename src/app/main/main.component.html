@@ -1,0 +1,63 @@
+<div class="header">
+  <h3 class="selected">Actions</h3>
+  <h3 style=" margin-left: 2.5em;">Dashboard</h3>
+</div>
+<div class="subContainer">
+  <div class="collapseHeader">
+    <span> Here's something you can try</span>
+    <span *ngIf="actionsExpanded" (click)="toggleActionDiv()" style="float: right;margin-right: 6%;"> Collapse <fa-icon
+        class="iconClass" [icon]="faAngleDown"></fa-icon> </span>
+    <span *ngIf="!actionsExpanded" (click)="toggleActionDiv()" style="float: right;margin-right: 6%;"> Expand <fa-icon
+        class="iconClass" [icon]="faAngleRight"></fa-icon> </span>
+  </div>
+
+  <div
+    [ngStyle]="{'max-height': (actionsExpanded=== true) ?  '500px':'0', 'overflow': 'hidden', 'transition': 'max-height 1s'}">
+    <div class="groupContainer">
+      <div class="card" *ngFor="let item of cardData">
+        <div class="innerCard">
+
+        <div class="face front">  
+        <div style="height: 25px;">
+          <span style="width: 80%;display:inline-block">{{item.name}}</span>
+          <fa-icon class="iconClass" [icon]="item.icon"></fa-icon>
+        </div>
+        <div class="cardHeading"> {{item.heading}}</div>
+        <div class="timeDisplay">{{item.time}}</div>
+        </div>
+        <div class="face back"> <p>{{item.info}}</p></div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="subContainer" style="margin-top: 20px">
+  <div class="collapseHeader">
+    <span> Quick Tutorials</span>
+    <span *ngIf="tutorialsExpanded" (click)="toggleTutorialDiv()" style="float: right;margin-right: 6%;"> Collapse
+      <fa-icon class="iconClass" [icon]="faAngleDown"></fa-icon> </span>
+    <span *ngIf="!tutorialsExpanded" (click)="toggleTutorialDiv()" style="float: right;margin-right: 6%;"> Expand
+      <fa-icon class="iconClass" [icon]="faAngleRight"></fa-icon> </span>
+  </div>
+  <div
+    [ngStyle]="{'max-height': (tutorialsExpanded=== true) ?  '600px':'0', 'overflow': 'hidden', 'transition': 'max-height 1s'}">
+  <div class="groupContainer">
+  <div class="tutorialCard">
+    <span>Create a Compute</span>
+    <iframe src="https://www.youtube.com/embed/MYriVTiyeFw" title="YouTube video player" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+    <div class="subCard">
+      Oracle Cloud Infrastructure Compute lets you provision and manage compute hosts, known as instances . You can launch instances as needed to meet your compute and application requirements. After you launch an instance, you can access it securely from your computer, restart it, attach and detach volumes, and terminate it when you're done with it. Any changes made to the instance's local drives are lost when you terminate it. Any saved changes to volumes attached to the instance are retained.
+    </div>    
+  </div>
+  <div class="tutorialCard">
+    <span>Create a Database</span>
+    <iframe src="https://www.youtube.com/embed/A498z-F4uIc" title="YouTube video player" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+      <div class="subCard">MySQL Database Service is a fully managed Oracle Cloud Infrastructure native service, developed, managed, and supported by the MySQL team in Oracle. Oracle automates all tasks such as backup and recovery, database and operating system patching, and so on. You are responsible solely for managing your data, schema designs, and access policies.</div>
+   </div>
+  </div>
+  </div>
+</div>

@@ -6,12 +6,14 @@
     </div>
      
     <div class="subGroupDiv" *ngFor="let subitem of item.children;let indexSub=index;">
-    <div class="subGroupItems" (click)="toggleCollapse(indexMain,indexSub)"> {{subitem.name}}
-    <span *ngIf="subitem.expanded==true;else expanded" > <fa-icon  class="iconClass" [icon]="faAngleDown"></fa-icon></span>
+    <div class="subGroupItems parent" [ngClass]="{'itemSelected': subitem.expanded === true}"   (click)="toggleCollapse(indexMain,indexSub)"> {{subitem.name}}
+      <span *ngIf="subitem.children">
+    <span *ngIf="subitem.expanded==true; else expanded"> <fa-icon  class="iconClass" [icon]="faAngleDown"></fa-icon></span>
     <ng-template #expanded >  <fa-icon class="iconClass"  [icon]="faAngleRight"></fa-icon></ng-template>
+    </span>
     </div>
       <div  [ngStyle]="{'max-height': (subitem.expanded === true) ?  '300px':'0', 'overflow': 'hidden', 'transition': 'max-height 1s'}">
-      <div class="subGroupItems" *ngFor="let child of subitem.children">
+      <div class="subGroupItems child" *ngFor="let child of subitem.children">
                        {{child}}
           </div>
         </div>   

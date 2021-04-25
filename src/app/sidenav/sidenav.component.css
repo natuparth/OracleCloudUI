@@ -9,6 +9,7 @@
 .subGroupHeading{
     font-size: small;
     padding: 5%;
+    color: darkgrey;
 }
 
 
@@ -20,14 +21,23 @@
     justify-items: flex-start;
 }
 .subGroupItems{
-    padding: 5%;
-    transition: height 2.5s;
+    padding: 4%;
+    font-size: 15px;
 }
-div.subGroupItems:hover{
+
+div.subGroupItems.parent:hover{
     border-left: 3px solid #3ac5a6;
     background-color: #364050;
+    cursor: pointer;
+}
+div.subGroupItems.child:hover{
+    background-color: #364050;
+    cursor: pointer;
 }
 
 .iconClass{
     float: right;
+}
+.itemSelected{
+    border-left: 3px solid #3ac5a6;
 }
