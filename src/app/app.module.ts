@@ -8,20 +8,25 @@ import { HeaderComponent } from './header/header.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { MainComponent } from './main/main.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ApexChartComponent } from './main/chart/chart.component';
+import { NgApexchartsModule } from "ng-apexcharts";
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     SidenavComponent,
-    MainComponent
+    MainComponent,
+    ApexChartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    BrowserAnimationsModule
-
+    BrowserAnimationsModule,
+    NgApexchartsModule
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

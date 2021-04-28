@@ -1,0 +1,24 @@
+<div style="display: flex;">
+<div id="chart">
+    <apx-chart
+      [series]="piechartOptions.series"
+      [chart]="piechartOptions.chart"
+      [labels]="piechartOptions.labels"
+      [responsive]="piechartOptions.responsive"
+      [title]="piechartOptions.title"
+    ></apx-chart>
+  </div>
+
+  <div id="chart">
+    <apx-chart
+      [series]="chartOptions.seriesBar"
+      [chart]="chartOptions.chart"
+      [dataLabels]="chartOptions.dataLabels"
+      [plotOptions]="chartOptions.plotOptions"
+      [yaxis]="chartOptions.yaxis"
+      [xaxis]="chartOptions.xaxis"
+      [fill]="chartOptions.fill"
+      [title]="chartOptions.title"
+    ></apx-chart>
+  </div>
+  </div>

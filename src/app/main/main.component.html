@@ -61,3 +61,16 @@
   </div>
   </div>
 </div>
+<div class="subContainer" style="margin-top: 20px">
+  <div class="collapseHeader">
+    <span> Data</span>
+    <span *ngIf="chartsDivExpanded" (click)="chartsDivCollapse()" style="float: right;margin-right: 6%;"> Collapse
+      <fa-icon class="iconClass" [icon]="faAngleDown"></fa-icon> </span>
+    <span *ngIf="!chartsDivExpanded" (click)="chartsDivCollapse()" style="float: right;margin-right: 6%;"> Expand
+      <fa-icon class="iconClass" [icon]="faAngleRight"></fa-icon> </span>
+  </div>
+  <div 
+  [ngStyle]="{'max-height': (chartsDivExpanded=== true) ?  '600px':'0', 'overflow': 'hidden', 'transition': 'max-height 1s'}">>
+  <app-chart></app-chart>
+</div>
+</div>

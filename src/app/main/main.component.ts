@@ -1,36 +1,16 @@
-import { animate, AUTO_STYLE, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { faSearch,faBox,faNetworkWired,faMicrochip, faDatabase ,faAngleDown, faAngleRight} from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css'],
-  animations: [
-    trigger(
-      'inOutAnimation', 
-      [
-        transition(
-          ':enter', 
-          [
-            style({ height: 0, opacity: 0 }),
-            animate('0.5s ease-out', 
-                    style({ height: 300, opacity: 1 }))
-          ]
-        ),
-        transition(
-          ':leave', 
-          [
-            style({ height: '100%' , opacity: 1 }),
-            animate('0.5s ease-in', 
-                    style({ height: 0, opacity: 0 }))
-          ]
-        )
-      ]
-    ),
-    
-  ]
+  
 })
 export class MainComponent implements OnInit {
+ 
+  
+chartsDivExpanded = true;
 actionsExpanded = true;
 tutorialsExpanded = true;
 faDatabase = faDatabase;
@@ -110,6 +90,9 @@ faAngleRight = faAngleRight;
   }
   toggleTutorialDiv(){
     this.tutorialsExpanded = !this.tutorialsExpanded;
+  }
+  chartsDivCollapse(){
+    this.chartsDivExpanded = !this.chartsDivExpanded;
   }
 
 }
